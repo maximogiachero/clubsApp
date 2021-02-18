@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "scr"
+		},
+		{
+			"path": "docs"
 		}
 	],
 	"settings": {}

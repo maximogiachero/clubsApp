@@ -28,11 +28,11 @@
 
 <div class="container">
 
-<form action="">
+<form name="form" action="contacto.php" method="POST" onSubmit= "return validacion()" >
 
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
 
         <small id="emailHelp" class="form-text text-muted">el campo email es requerido</small>
 
@@ -41,13 +41,13 @@
 <div class="form-group">
 
     <label for="nombre">Nombre Y Apellido</label>
-    <input type="text" class="form-control" id="Nobre">
+    <input type="text" class="form-control" id="nombre" name="nombre">
 
 </div>
 
 <label for="comentarios">comentarios</label>
 
-<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentarios"></textarea>
 
     
 <div class="form-group form-check">

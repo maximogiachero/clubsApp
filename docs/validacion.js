@@ -1,9 +1,18 @@
+
+var eleform = document.getElementById('mensajeForm')
+
+eleform.style.display='none'
+
+
 function validacion () {
+eleform.style.display='none'
 if(document.form.email.value===""){
 
 document.form.email.focus()
+eleform.style.display='inline'
 
-console.log("el campo email esta vacio pon un usuario para funcionar")
+eleform.innerHTML='el campo email es requerido'
+
 
 return false
 
@@ -11,8 +20,10 @@ return false
  if(document.form.nombre.value===""){
 
 document.form.nombre.focus()
+eleform.style.display='inline'
 
-console.log("el campo de nombre y apellido esta vacio pon tu nombre y apellido para que funcione")
+eleform.innerHTML='el campo de nombre y apellido es requerido'
+
 
 return false
 
@@ -20,8 +31,10 @@ return false
 if(document.form.comentarios.value===""){
 
 document.form.comentarios.focus()
+eleform.style.display='inline'
 
-console.log("el comentario es requerido deja tu comentario")
+eleform.innerHTML='el comentario es requerido deja tu comentario'
+
 
 return false
 

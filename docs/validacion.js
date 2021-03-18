@@ -17,7 +17,15 @@ console.log("el campo de nombre y apellido esta vacio pon tu nombre y apellido p
 return false
 
  }
+if(document.form.comentarios.value===""){
 
+document.form.comentarios.focus()
+
+console.log("el comentario es requerido deja tu comentario")
+
+return false
+
+}
 
 console.log ('soy la funcion validacion')
 return false

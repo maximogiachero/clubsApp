@@ -3,7 +3,8 @@ var eleform = document.getElementById('mensajeForm')
 
 eleform.style.display='none'
 
-function callPhp(){
+function callPhp(objform){
+    console.log('recibiendo el ojeto form en la funcion callPhp',objform)
 let data = {nombres:'maxi'}
     fetch('https://example.com/profile', { method: 'POST', 
     headers: { 'Content-Type': 'application/json', }, 
@@ -11,12 +12,15 @@ let data = {nombres:'maxi'}
     .then(response => response.json()) 
     .then(data => { console.log('Success:', data); }) 
     .catch((error) => { console.error('Error:', error); });
+
 return false
 
 } 
 
 function validacion () {
     
+var objform={ email:'',nombre:'',comentarios:''}
+
     eleform.style.display='none'
 
 
@@ -25,9 +29,9 @@ function validacion () {
         eleform.style.display='inline'
         eleform.innerHTML='el campo email es requerido'
         return false
-    }else {
+    } else {
         console.log(document.form.email.value)
-
+        objform.email=document.form.email.value
     }
 
 
@@ -38,6 +42,7 @@ function validacion () {
         return false
     }else{
         console.log(document.form.nombre.value)
+        objform.nombre=document.form.nombre.value
     }
 
     if(document.form.comentarios.value===""){
@@ -45,10 +50,11 @@ function validacion () {
         eleform.style.display='inline'
         eleform.innerHTML='el comentario es requerido deja tu comentario'
         return false
-    }else{
+    } else{
         console.log(document.form.comentarios.value)
+        objform.comentarios=document.form.comentarios.value
     }
 
-    console.log ('soy la funcion validacion')
-    return false
+    console.log('soy la funcion validacion', objform)
+    return callPhp(objform)
 }
